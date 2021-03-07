@@ -11,3 +11,5 @@ To build the Triggerbot,
 
 
 To use it, update the offsets in the .txt file, offsets can be found here https://github.com/frk1/hazedumper/blob/master/csgo.hpp
+
+Defaultbutton to turn on the Triggebot is the key 'o', but it can be changed in the config file
