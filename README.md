@@ -3,6 +3,7 @@ A simple external Triggerbot for CS-GO
 
 
 I won't update the offsets.
+
 To build the Triggerbot, 
   - run the cmake_build.bat
   - then build the project (open the Solution and build it)
