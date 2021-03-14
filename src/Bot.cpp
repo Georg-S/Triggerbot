@@ -73,7 +73,7 @@ void Bot::update_triggerlogic()
 	int local_team = mem_reader.read_memory<int>(local_player + team_offset);
 	int cross_hair_ID = mem_reader.read_memory<int>(local_player + crosshair_offset);
 
-	if (cross_hair_ID <= 0 && cross_hair_ID > 300)
+	if (cross_hair_ID <= 0 || cross_hair_ID > 300)
 		return;
 
 	DWORD enemy_in_crosshair = mem_reader.read_memory<DWORD>(
@@ -81,7 +81,7 @@ void Bot::update_triggerlogic()
 	int enemy_health = mem_reader.read_memory<int>(enemy_in_crosshair + player_health_offset);
 	int enemy_team = mem_reader.read_memory<int>(enemy_in_crosshair + team_offset);
 
-	if ((local_team != enemy_team) && (enemy_health < 200) && (enemy_health > 0))
+	if ((local_team != enemy_team) && (enemy_health > 0) && (enemy_health < 200))
 	{
 		simulate_left_mouse_button_click();
 		Sleep(delay);
